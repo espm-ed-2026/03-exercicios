@@ -20,7 +20,10 @@ class Conta:
         if self.saldo >= valor:
             self.sacar(valor)
             destino.depositar(valor)
-        
+    
+    # sobrescrever (override)   
+    def __str__(self):
+        return f"Titular = {self.titular}\nNúmero = {self.numero}\nSaldo = R$ {self.saldo}"
         
 # programa principal
 conta = Conta("selmini")
@@ -29,3 +32,4 @@ conta.depositar(7500)
 conta.transferir(7000, conta2)
 print(conta.saldo)
 print(conta2.saldo)
+print(conta)
